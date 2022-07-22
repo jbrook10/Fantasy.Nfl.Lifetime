@@ -1,0 +1,29 @@
+<mat-card class="leaderboard-card">
+  <table mat-table class="full-width-table" matSort aria-label="Elements" [dataSource]="dataSource" matSort>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let row">{{row.Name}}</td>
+    </ng-container>
+
+    <!-- Score Column -->
+    <ng-container matColumnDef="Score">
+      <th mat-header-cell *matHeaderCellDef>Score</th>
+      <td mat-cell *matCellDef="let row">{{row.Score | number:'1.2-2'}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
+<mat-card class="leaderboard-card">
+  <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="10px">
+    <div *ngFor="let owner of LeagueData.Owners" >
+      <app-total-stats [owner]="owner" [onlyCounting]="true"></app-total-stats>
+    </div>
+  </div>
+
+</mat-card>
+
+<div><span> Last Update: </span> <span>{{LeagueData.LastUpdated  | date: 'MM/dd/yyyy - h:mm a'}}</span></div>

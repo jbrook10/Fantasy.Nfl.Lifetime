@@ -1,0 +1,51 @@
+.header-data {
+  width: 300px;
+  background-color: rgb(228 226 226);
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  .name {
+    font-weight: bold;
+  }
+}
+
+table {
+  width: 100%;
+  tr.mat-row, tr.mat-header-row {
+      height: 24px !important;
+      td {
+          font-size: 12px;
+          a {
+              text-decoration: none;
+              color: #000;
+          }
+      }
+
+      &.counts {
+        background-color: rgb(246, 240, 240);
+      }
+  }
+
+  th {
+    font-weight: bold;
+  }
+}
+
+.mat-cell, .mat-header-cell {
+  padding-left: 1em !important;
+  line-height: 10px;
+}
+
+.search {
+  font-size: 14px;
+  color: rgba(0,0,0,.33);
+  margin-top: 10px;
+}
+
+.age {
+  margin-left: 5px;
+  font-size: 9px;
+}

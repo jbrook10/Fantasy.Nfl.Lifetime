@@ -1,0 +1,14 @@
+# To build angular app
+
+ng build --configuration production
+
+# To build lambda
+
+dotnet publish
+
+# test lambda message 
+
+{
+    "Year": 2022,
+    "SeasonType": 0
+}

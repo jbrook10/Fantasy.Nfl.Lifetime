@@ -1,0 +1,559 @@
+<table class="stats_table sortable row_summable per_match_toggle" data-cols-to-freeze="1,3" id="passing">
+    <caption>Passing Table</caption>
+    <colgroup>
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+    </colgroup>
+    <thead>
+        <tr>
+            <th aria-label="Year" class=" poptip sort_default_asc left" data-stat="year_id" scope="col">Year</th>
+            <th aria-label="Age" class=" poptip sort_default_asc center" data-stat="age"
+                data-tip="Player&#39;s age on December 31st of that year" scope="col">Age</th>
+            <th aria-label="Tm" class=" poptip sort_default_asc show_partial_when_sorting left" data-stat="team"
+                scope="col">Tm</th>
+            <th aria-label="Pos" class=" poptip sort_default_asc left" data-stat="pos"
+                data-tip="&lt;b&gt;Position&lt;/b&gt;&lt;br&gt;In player and team season stats,&lt;br&gt;Capitals indicates primary starter.&lt;br&gt;Lower-case means part-time starter."
+                scope="col">Pos</th>
+            <th aria-label="No." class=" poptip sort_default_asc center" data-stat="uniform_number"
+                data-tip="Uniform number" scope="col">No.</th>
+            <th aria-label="Games" class=" poptip center" data-stat="g" data-tip="Games played" scope="col">G</th>
+            <th aria-label="Games Started" class=" poptip center" data-stat="gs"
+                data-tip="Games started as an offensive or defensive player" scope="col">GS</th>
+            <th aria-label="QB Record" class=" poptip center" data-stat="qb_rec"
+                data-tip="Team record in games started by this QB (regular season)" scope="col">QBrec</th>
+            <th aria-label="Passes Completed" class=" poptip center" data-stat="pass_cmp" data-tip="Passes completed"
+                scope="col">Cmp</th>
+            <th aria-label="Pass Attempts" class=" poptip center" data-stat="pass_att" data-tip="Passes attempted"
+                scope="col">Att</th>
+            <th aria-label="Pass Completion %" class=" poptip hide_non_quals center" data-filter="1"
+                data-name="Pass Completion %" data-stat="pass_cmp_perc"
+                data-tip="Percentage of Passes Completed&lt;br&gt;Minimum 14 attempts per scheduled game to qualify as leader.&lt;br /&gt;Minimum 1500 pass attempts to qualify as career leader."
+                scope="col">Cmp%</th>
+            <th aria-label="Passing Yds" class=" poptip center" data-stat="pass_yds"
+                data-tip="Yards Gained by Passing&lt;br&gt;For teams, sack yardage is deducted from this total"
+                scope="col">Yds</th>
+            <th aria-label="Passing TD" class=" poptip center" data-stat="pass_td" data-tip="Passing Touchdowns"
+                scope="col">TD</th>
+            <th aria-label="Passing TD %" class=" poptip hide_non_quals center" data-filter="1" data-name="Passing TD %"
+                data-stat="pass_td_perc"
+                data-tip="Percentage of Touchdowns Thrown when Attempting to Pass &lt;br&gt;Minimum 14 attempts per scheduled game to qualify as leader.&lt;br /&gt;Minimum 1500 pass attempts to qualify as career leader"
+                scope="col">TD%</th>
+            <th aria-label="Passes Intercepted" class=" poptip center" data-stat="pass_int"
+                data-tip="Interceptions thrown" scope="col">Int</th>
+            <th aria-label="Pass Intercept. %" class=" poptip sort_default_asc hide_non_quals center" data-filter="1"
+                data-name="Pass Intercept. %" data-stat="pass_int_perc"
+                data-tip="Percentage of Times Intercepted when Attempting to Pass &lt;br&gt;Minimum 14 attempts per scheduled game to qualify as leader.&lt;br /&gt;Minimum 1500 pass attempts to qualify as career leader.&lt;br /&gt;"
+                scope="col">Int%</th>
+            <th aria-label="Pass 1st Downs" class=" poptip center" data-stat="pass_first_down"
+                data-tip="First downs passing" scope="col">1D</th>
+            <th aria-label="Long Pass" class=" poptip center" data-stat="pass_long"
+                data-tip="Longest Completed Pass Thrown (complete since 1975)" scope="col">Lng</th>
+            <th aria-label="Yds/Pass Att" class=" poptip hide_non_quals center" data-filter="1" data-name="Yds/Pass Att"
+                data-stat="pass_yds_per_att"
+                data-tip="Yards gained per pass attempt &lt;br&gt;Minimum 14 attempts per scheduled game to qualify as leader.&lt;br&gt;Minimum 1500 pass attempts to qualify as career leader."
+                scope="col">Y/A</th>
+            <th aria-label="Adj Yds/Pass Att" class=" poptip hide_non_quals center" data-filter="1"
+                data-name="Adj Yds/Pass Att" data-stat="pass_adj_yds_per_att"
+                data-tip="Adjusted Yards gained per pass attempt&lt;br /&gt;(Passing Yards + 20 * Passing TD - 45 * Interceptions) / (Passes Attempted)&lt;br /&gt;Minimum 14 attempts per scheduled game to qualify as leader.&lt;br /&gt;Minimum 1500 pass attempts to qualify as career leader."
+                scope="col">AY/A</th>
+            <th aria-label="Yds/Pass Cmp" class=" poptip hide_non_quals center" data-filter="1" data-name="Yds/Pass Cmp"
+                data-stat="pass_yds_per_cmp"
+                data-tip="&lt;b&gt;Yards gained per pass completion&lt;/b&gt; (Passing Yards) / (Passes Completed)&lt;br /&gt;Minimum 14 pass attempts per schedule game to qualify as leader.&lt;br /&gt;Minimum 1500 pass attempts to qualify as career leader"
+                scope="col">Y/C</th>
+            <th aria-label="Passing Yds/Game" class=" poptip hide_non_quals center" data-filter="1"
+                data-name="Passing Yds/Game" data-stat="pass_yds_per_g"
+                data-tip="&lt;b&gt;Yards gained per game played&lt;/b&gt;&lt;br&gt;Minimum half a game played per scheduled game to qualify as leader.&lt;br&gt;Minimum 1500 pass attempts to qualify as career leader"
+                scope="col">Y/G</th>
+            <th aria-label="Passer Rating" class=" poptip hide_non_quals center" data-filter="1"
+                data-name="Passer Rating" data-stat="pass_rating"
+                data-tip="Quarterback Rating, see glossary for details&lt;br&gt;Different ratings are used by the NFL and NCAA.&lt;br /&gt;Minimum 1500 pass attempts to qualify as career leader, minimum 150 pass attempts for playoffs leader."
+                scope="col">Rate</th>
+            <th aria-label="QBR" class=" poptip show_partial_when_sorting hide_non_quals center" data-filter="1"
+                data-name="QBR" data-stat="qbr"
+                data-tip="&lt;b&gt;QBR&lt;/b&gt;&lt;br /&gt;ESPN s Total Quarterback Rating, calculated since 2006"
+                scope="col">QBR</th>
+            <th aria-label="Sacked " class=" poptip center" data-stat="pass_sacked"
+                data-tip="Times Sacked (first recorded in 1969, player per game since 1981)" scope="col">Sk</th>
+            <th aria-label="Sacked Yds Lost" class=" poptip center" data-stat="pass_sacked_yds"
+                data-tip="Yards lost due to sacks (first recorded in 1969, player per game since 1981)" scope="col">Yds
+            </th>
+            <th aria-label="Sack %" class=" poptip sort_default_asc hide_non_quals center" data-filter="1"
+                data-name="Sack %" data-stat="pass_sacked_perc"
+                data-tip="Percentage of Time Sacked when Attempting to Pass: Times Sacked / (Passes Attempted + Times Sacked)&lt;br&gt;Minimum 14 attempts + sacks per scheduled game to qualify as leader.&lt;br /&gt;Minimum 1500 pass attempts to qualify as career leader"
+                scope="col">Sk%</th>
+            <th aria-label="Net Yds/Pass Att" class=" poptip hide_non_quals center" data-filter="1"
+                data-name="Net Yds/Pass Att" data-stat="pass_net_yds_per_att"
+                data-tip="Net Yards gained per pass attempt&lt;br /&gt;(Passing Yards - Sack Yards) / (Passes Attempted + Times Sacked)&lt;br /&gt;Minimum 14 attempts per schedule game to qualify as leader.&lt;br /&gt;Minimum 1500 pass attempts to qualify as career leader."
+                scope="col">NY/A</th>
+            <th aria-label="Adj Net Yds/Pass Att" class=" poptip hide_non_quals center" data-filter="1"
+                data-name="Adj Net Yds/Pass Att" data-stat="pass_adj_net_yds_per_att"
+                data-tip="&lt;b&gt;Adjusted Net Yards per Pass Attempt&lt;/b&gt;&lt;br&gt;(Passing Yards - Sack Yards + (20 * Passing TD) - (45 * Interceptions)) / (Passes Attempted + Times Sacked)&lt;br&gt;Minimum 14 attempts per scheduled game to qualify as leader.&lt;br /&gt;Minimum 1500 pass attempts to qualify as career leader."
+                scope="col">ANY/A</th>
+            <th aria-label="Comebacks" class=" poptip center" data-stat="comebacks"
+                data-tip="Comebacks led by quarterback.&lt;br /&gt;Must be an offensive scoring drive in the 4th quarter, with the team trailing by one score, though not necessarily a drive to take the lead. Only games ending in a win or tie are included."
+                scope="col">4QC</th>
+            <th aria-label="Game-Winning Drives" class=" poptip center" data-stat="gwd"
+                data-tip="Game-winning drives led by quarterback.&lt;br /&gt;Must be an offensive scoring drive in the 4th quarter or overtime that puts the winning team ahead for the last time."
+                scope="col">GWD</th>
+            <th aria-label="Approximate Value" class=" poptip center" data-stat="av"
+                data-tip="Approximate Value is our attempt to attach a single number to every player-season since 1960.&lt;br&gt;See the glossary for more information."
+                scope="col">AV</th>
+            <th aria-label="Awards" class=" poptip center" data-stat="awards"
+                data-tip="Summary of how the player did in awards voting that year.&lt;br /&gt;MVP - AP Most Valuable Player&lt;br /&gt;AP - AP All-Pro&lt;br /&gt;PB - Pro Bowl&lt;br /&gt;O/DRoY - Offensive/Defensive Rookie Of the Year&lt;br /&gt;O/DPoy - Offensive/Defensive Player of the Year&lt;br /&gt;"
+                scope="col">Awards</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="full_table" id="passing.2012">
+            <th class="left " csk="2012" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2012/">2012</a>*</th>
+            <td class="right " data-stat="age">24</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2012.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " csk="0.68750000000" data-stat="qb_rec">11-5-0</td>
+            <td class="right " data-stat="pass_cmp">252</td>
+            <td class="right " data-stat="pass_att">393</td>
+            <td class="right " data-stat="pass_cmp_perc">64.1</td>
+            <td class="right " data-stat="pass_yds">3118</td>
+            <td class="right " data-stat="pass_td">26</td>
+            <td class="right " data-stat="pass_td_perc">6.6</td>
+            <td class="right " data-stat="pass_int">10</td>
+            <td class="right " data-stat="pass_int_perc">2.5</td>
+            <td class="right " data-stat="pass_first_down">153</td>
+            <td class="right " data-stat="pass_long">67</td>
+            <td class="right " data-stat="pass_yds_per_att">7.9</td>
+            <td class="right " data-stat="pass_adj_yds_per_att">8.1</td>
+            <td class="right " data-stat="pass_yds_per_cmp">12.4</td>
+            <td class="right " data-stat="pass_yds_per_g">194.9</td>
+            <td class="right " data-stat="pass_rating">100.0</td>
+            <td class="right " data-stat="qbr">72.7</td>
+            <td class="right " data-stat="pass_sacked">33</td>
+            <td class="right " data-stat="pass_sacked_yds">203</td>
+            <td class="right " data-stat="pass_sacked_perc">7.7</td>
+            <td class="right " data-stat="pass_net_yds_per_att">6.84</td>
+            <td class="right " data-stat="pass_adj_net_yds_per_att">7.01</td>
+            <td class="right " data-stat="comebacks">3</td>
+            <td class="right " data-stat="gwd">4</td>
+            <td class="right " data-stat="av">16</td>
+            <td class="left " data-stat="awards"><a
+                    href="https://www.pro-football-reference.com/awards/awards_2012.htm">AP ORoY-3</a>, <a
+                    href="https://www.pro-football-reference.com/years/2012/probowl.htm">PB</a></td>
+        </tr>
+        <tr class="full_table" id="passing.2013">
+            <th class="left " csk="2013" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2013/">2013</a>*</th>
+            <td class="right " data-stat="age">25</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2013.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " csk="0.81250000000" data-stat="qb_rec">13-3-0</td>
+            <td class="right " data-stat="pass_cmp">257</td>
+            <td class="right " data-stat="pass_att">407</td>
+            <td class="right " data-stat="pass_cmp_perc">63.1</td>
+            <td class="right " data-stat="pass_yds">3357</td>
+            <td class="right " data-stat="pass_td">26</td>
+            <td class="right " data-stat="pass_td_perc">6.4</td>
+            <td class="right " data-stat="pass_int">9</td>
+            <td class="right " data-stat="pass_int_perc">2.2</td>
+            <td class="right " data-stat="pass_first_down">157</td>
+            <td class="right " data-stat="pass_long">80</td>
+            <td class="right " data-stat="pass_yds_per_att">8.2</td>
+            <td class="right " data-stat="pass_adj_yds_per_att">8.5</td>
+            <td class="right " data-stat="pass_yds_per_cmp">13.1</td>
+            <td class="right " data-stat="pass_yds_per_g">209.8</td>
+            <td class="right " data-stat="pass_rating">101.2</td>
+            <td class="right " data-stat="qbr">67.2</td>
+            <td class="right " data-stat="pass_sacked">44</td>
+            <td class="right " data-stat="pass_sacked_yds">272</td>
+            <td class="right " data-stat="pass_sacked_perc">9.8</td>
+            <td class="right " data-stat="pass_net_yds_per_att">6.84</td>
+            <td class="right " data-stat="pass_adj_net_yds_per_att">7.10</td>
+            <td class="right " data-stat="comebacks">3</td>
+            <td class="right " data-stat="gwd">4</td>
+            <td class="right " data-stat="av">17</td>
+            <td class="left " data-stat="awards"><a
+                    href="https://www.pro-football-reference.com/awards/awards_2013.htm">AP OPoY-4</a>, <a
+                    href="https://www.pro-football-reference.com/years/2013/probowl.htm">PB</a></td>
+        </tr>
+        <tr class="full_table" id="passing.2014">
+            <th class="left " csk="2014" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2014/">2014</a>*</th>
+            <td class="right " data-stat="age">26</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2014.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " csk="0.75000000000" data-stat="qb_rec">12-4-0</td>
+            <td class="right " data-stat="pass_cmp">285</td>
+            <td class="right " data-stat="pass_att">452</td>
+            <td class="right " data-stat="pass_cmp_perc">63.1</td>
+            <td class="right " data-stat="pass_yds">3475</td>
+            <td class="right " data-stat="pass_td">20</td>
+            <td class="right " data-stat="pass_td_perc">4.4</td>
+            <td class="right " data-stat="pass_int">7</td>
+            <td class="right " data-stat="pass_int_perc">1.5</td>
+            <td class="right " data-stat="pass_first_down">161</td>
+            <td class="right " data-stat="pass_long">80</td>
+            <td class="right " data-stat="pass_yds_per_att">7.7</td>
+            <td class="right " data-stat="pass_adj_yds_per_att">7.9</td>
+            <td class="right " data-stat="pass_yds_per_cmp">12.2</td>
+            <td class="right " data-stat="pass_yds_per_g">217.2</td>
+            <td class="right " data-stat="pass_rating">95.0</td>
+            <td class="right " data-stat="qbr">71.5</td>
+            <td class="right " data-stat="pass_sacked">42</td>
+            <td class="right " data-stat="pass_sacked_yds">242</td>
+            <td class="right " data-stat="pass_sacked_perc">8.5</td>
+            <td class="right " data-stat="pass_net_yds_per_att">6.54</td>
+            <td class="right " data-stat="pass_adj_net_yds_per_att">6.72</td>
+            <td class="right " data-stat="comebacks">1</td>
+            <td class="right " data-stat="gwd">4</td>
+            <td class="right " data-stat="av">19</td>
+            <td class="left " data-stat="awards"><a
+                    href="https://www.pro-football-reference.com/years/2014/probowl.htm">PB</a></td>
+        </tr>
+        <tr class="full_table" id="passing.2015">
+            <th class="left " csk="2015" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2015/">2015</a>*</th>
+            <td class="right " data-stat="age">27</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2015.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " csk="0.62500000000" data-stat="qb_rec">10-6-0</td>
+            <td class="right " data-stat="pass_cmp">329</td>
+            <td class="right " data-stat="pass_att">483</td>
+            <td class="right " data-stat="pass_cmp_perc">68.1</td>
+            <td class="right " data-stat="pass_yds">4024</td>
+            <td class="right " data-stat="pass_td">34</td>
+            <td class="right " data-stat="pass_td_perc">7</td>
+            <td class="right " data-stat="pass_int">8</td>
+            <td class="right " data-stat="pass_int_perc">1.7</td>
+            <td class="right " data-stat="pass_first_down">190</td>
+            <td class="right " data-stat="pass_long">80</td>
+            <td class="right " data-stat="pass_yds_per_att">8.3</td>
+            <td class="right " data-stat="pass_adj_yds_per_att">9.0</td>
+            <td class="right " data-stat="pass_yds_per_cmp">12.2</td>
+            <td class="right " data-stat="pass_yds_per_g">251.5</td>
+            <td class="right " data-stat="pass_rating"><strong>110.1</strong></td>
+            <td class="right " data-stat="qbr">68.6</td>
+            <td class="right " data-stat="pass_sacked">45</td>
+            <td class="right " data-stat="pass_sacked_yds">265</td>
+            <td class="right " data-stat="pass_sacked_perc">8.5</td>
+            <td class="right " data-stat="pass_net_yds_per_att">7.12</td>
+            <td class="right " data-stat="pass_adj_net_yds_per_att">7.73</td>
+            <td class="right " data-stat="comebacks">2</td>
+            <td class="right " data-stat="gwd">2</td>
+            <td class="right " data-stat="av">19</td>
+            <td class="left " data-stat="awards"><a
+                    href="https://www.pro-football-reference.com/awards/awards_2015.htm">AP OPoY-3</a>, <a
+                    href="https://www.pro-football-reference.com/years/2015/probowl.htm">PB</a></td>
+        </tr>
+        <tr class="full_table" id="passing.2016">
+            <th class="left " csk="2016" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2016/">2016</a></th>
+            <td class="right " data-stat="age">28</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2016.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " csk="0.65625000000" data-stat="qb_rec">10-5-1</td>
+            <td class="right " data-stat="pass_cmp">353</td>
+            <td class="right " data-stat="pass_att">546</td>
+            <td class="right " data-stat="pass_cmp_perc">64.7</td>
+            <td class="right " data-stat="pass_yds">4219</td>
+            <td class="right " data-stat="pass_td">21</td>
+            <td class="right " data-stat="pass_td_perc">3.8</td>
+            <td class="right " data-stat="pass_int">11</td>
+            <td class="right " data-stat="pass_int_perc">2</td>
+            <td class="right " data-stat="pass_first_down">193</td>
+            <td class="right " data-stat="pass_long">59</td>
+            <td class="right " data-stat="pass_yds_per_att">7.7</td>
+            <td class="right " data-stat="pass_adj_yds_per_att">7.6</td>
+            <td class="right " data-stat="pass_yds_per_cmp">12.0</td>
+            <td class="right " data-stat="pass_yds_per_g">263.7</td>
+            <td class="right " data-stat="pass_rating">92.6</td>
+            <td class="right " data-stat="qbr">57.1</td>
+            <td class="right " data-stat="pass_sacked">41</td>
+            <td class="right " data-stat="pass_sacked_yds"><strong>293</strong></td>
+            <td class="right " data-stat="pass_sacked_perc">7</td>
+            <td class="right " data-stat="pass_net_yds_per_att">6.69</td>
+            <td class="right " data-stat="pass_adj_net_yds_per_att">6.56</td>
+            <td class="right " data-stat="comebacks">4</td>
+            <td class="right " data-stat="gwd">3</td>
+            <td class="right " data-stat="av">14</td>
+            <td class="left iz" data-stat="awards"></td>
+        </tr>
+        <tr class="full_table" id="passing.2017">
+            <th class="left " csk="2017" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2017/">2017</a>*</th>
+            <td class="right " data-stat="age">29</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2017.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " csk="0.56250000000" data-stat="qb_rec">9-7-0</td>
+            <td class="right " data-stat="pass_cmp">339</td>
+            <td class="right " data-stat="pass_att">553</td>
+            <td class="right " data-stat="pass_cmp_perc">61.3</td>
+            <td class="right " data-stat="pass_yds">3983</td>
+            <td class="right " data-stat="pass_td"><strong>34</strong></td>
+            <td class="right " data-stat="pass_td_perc">6.1</td>
+            <td class="right " data-stat="pass_int">11</td>
+            <td class="right " data-stat="pass_int_perc">2</td>
+            <td class="right " data-stat="pass_first_down">189</td>
+            <td class="right " data-stat="pass_long">74</td>
+            <td class="right " data-stat="pass_yds_per_att">7.2</td>
+            <td class="right " data-stat="pass_adj_yds_per_att">7.5</td>
+            <td class="right " data-stat="pass_yds_per_cmp">11.7</td>
+            <td class="right " data-stat="pass_yds_per_g">248.9</td>
+            <td class="right " data-stat="pass_rating">95.4</td>
+            <td class="right " data-stat="qbr">61.9</td>
+            <td class="right " data-stat="pass_sacked">43</td>
+            <td class="right " data-stat="pass_sacked_yds">322</td>
+            <td class="right " data-stat="pass_sacked_perc">7.2</td>
+            <td class="right " data-stat="pass_net_yds_per_att">6.14</td>
+            <td class="right " data-stat="pass_adj_net_yds_per_att">6.45</td>
+            <td class="right " data-stat="comebacks">2</td>
+            <td class="right " data-stat="gwd">2</td>
+            <td class="right " data-stat="av">15</td>
+            <td class="left " data-stat="awards"><a
+                    href="https://www.pro-football-reference.com/years/2017/probowl.htm">PB</a></td>
+        </tr>
+        <tr class="full_table" id="passing.2018">
+            <th class="left " csk="2018" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2018/">2018</a>*</th>
+            <td class="right " data-stat="age">30</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2018.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " csk="0.62500000000" data-stat="qb_rec">10-6-0</td>
+            <td class="right " data-stat="pass_cmp">280</td>
+            <td class="right " data-stat="pass_att">427</td>
+            <td class="right " data-stat="pass_cmp_perc">65.6</td>
+            <td class="right " data-stat="pass_yds">3448</td>
+            <td class="right " data-stat="pass_td">35</td>
+            <td class="right " data-stat="pass_td_perc">8.2</td>
+            <td class="right " data-stat="pass_int">7</td>
+            <td class="right " data-stat="pass_int_perc">1.6</td>
+            <td class="right " data-stat="pass_first_down">162</td>
+            <td class="right " data-stat="pass_long">66</td>
+            <td class="right " data-stat="pass_yds_per_att">8.1</td>
+            <td class="right " data-stat="pass_adj_yds_per_att">9.0</td>
+            <td class="right " data-stat="pass_yds_per_cmp">12.3</td>
+            <td class="right " data-stat="pass_yds_per_g">215.5</td>
+            <td class="right " data-stat="pass_rating">110.9</td>
+            <td class="right " data-stat="qbr">63.3</td>
+            <td class="right " data-stat="pass_sacked">51</td>
+            <td class="right " data-stat="pass_sacked_yds">355</td>
+            <td class="right " data-stat="pass_sacked_perc">10.7</td>
+            <td class="right " data-stat="pass_net_yds_per_att">6.47</td>
+            <td class="right " data-stat="pass_adj_net_yds_per_att">7.28</td>
+            <td class="right " data-stat="comebacks">2</td>
+            <td class="right " data-stat="gwd">4</td>
+            <td class="right " data-stat="av">14</td>
+            <td class="left " data-stat="awards"><a
+                    href="https://www.pro-football-reference.com/years/2018/probowl.htm">PB</a></td>
+        </tr>
+        <tr class="full_table" id="passing.2019">
+            <th class="left " csk="2019" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2019/">2019</a>*</th>
+            <td class="right " data-stat="age">31</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2019.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " csk="0.68750000000" data-stat="qb_rec">11-5-0</td>
+            <td class="right " data-stat="pass_cmp">341</td>
+            <td class="right " data-stat="pass_att">516</td>
+            <td class="right " data-stat="pass_cmp_perc">66.1</td>
+            <td class="right " data-stat="pass_yds">4110</td>
+            <td class="right " data-stat="pass_td">31</td>
+            <td class="right " data-stat="pass_td_perc">6</td>
+            <td class="right " data-stat="pass_int">5</td>
+            <td class="right " data-stat="pass_int_perc">1</td>
+            <td class="right " data-stat="pass_first_down">190</td>
+            <td class="right " data-stat="pass_long">60</td>
+            <td class="right " data-stat="pass_yds_per_att">8.0</td>
+            <td class="right " data-stat="pass_adj_yds_per_att">8.7</td>
+            <td class="right " data-stat="pass_yds_per_cmp">12.1</td>
+            <td class="right " data-stat="pass_yds_per_g">256.9</td>
+            <td class="right " data-stat="pass_rating">106.3</td>
+            <td class="right " data-stat="qbr">71.5</td>
+            <td class="right " data-stat="pass_sacked"><strong>48</strong></td>
+            <td class="right " data-stat="pass_sacked_yds">319</td>
+            <td class="right " data-stat="pass_sacked_perc">8.5</td>
+            <td class="right " data-stat="pass_net_yds_per_att">6.72</td>
+            <td class="right " data-stat="pass_adj_net_yds_per_att">7.42</td>
+            <td class="right " data-stat="comebacks"><strong>4</strong></td>
+            <td class="right " data-stat="gwd"><strong>5</strong></td>
+            <td class="right " data-stat="av">15</td>
+            <td class="left " data-stat="awards"><a
+                    href="https://www.pro-football-reference.com/awards/awards_2019.htm">AP OPoY-4</a>, <a
+                    href="https://www.pro-football-reference.com/years/2019/allpro.htm">AP2</a>, <a
+                    href="https://www.pro-football-reference.com/years/2019/probowl.htm">PB</a></td>
+        </tr>
+        <tr class="full_table" id="passing.2020">
+            <th class="left " csk="2020" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2020/">2020</a>*</th>
+            <td class="right " data-stat="age">32</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2020.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " csk="0.75000000000" data-stat="qb_rec">12-4-0</td>
+            <td class="right " data-stat="pass_cmp">384</td>
+            <td class="right " data-stat="pass_att">558</td>
+            <td class="right " data-stat="pass_cmp_perc">68.8</td>
+            <td class="right " data-stat="pass_yds">4212</td>
+            <td class="right " data-stat="pass_td">40</td>
+            <td class="right " data-stat="pass_td_perc">7.2</td>
+            <td class="right " data-stat="pass_int">13</td>
+            <td class="right " data-stat="pass_int_perc">2.3</td>
+            <td class="right " data-stat="pass_first_down">213</td>
+            <td class="right " data-stat="pass_long">62</td>
+            <td class="right " data-stat="pass_yds_per_att">7.5</td>
+            <td class="right " data-stat="pass_adj_yds_per_att">7.9</td>
+            <td class="right " data-stat="pass_yds_per_cmp">11.0</td>
+            <td class="right " data-stat="pass_yds_per_g">263.3</td>
+            <td class="right " data-stat="pass_rating">105.1</td>
+            <td class="right " data-stat="qbr">67.1</td>
+            <td class="right " data-stat="pass_sacked">47</td>
+            <td class="right " data-stat="pass_sacked_yds">301</td>
+            <td class="right " data-stat="pass_sacked_perc">7.8</td>
+            <td class="right " data-stat="pass_net_yds_per_att">6.46</td>
+            <td class="right " data-stat="pass_adj_net_yds_per_att">6.82</td>
+            <td class="right " data-stat="comebacks">3</td>
+            <td class="right " data-stat="gwd">3</td>
+            <td class="right " data-stat="av">17</td>
+            <td class="left " data-stat="awards"><a
+                    href="https://www.pro-football-reference.com/years/2020/probowl.htm">PB</a></td>
+        </tr>
+        <tr class="full_table" id="passing.2021">
+            <th class="left " csk="2021" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2021/">2021</a>*</th>
+            <td class="right " data-stat="age">33</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2021.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">14</td>
+            <td class="right " data-stat="gs">14</td>
+            <td class="right " csk="0.42857142857" data-stat="qb_rec">6-8-0</td>
+            <td class="right " data-stat="pass_cmp">259</td>
+            <td class="right " data-stat="pass_att">400</td>
+            <td class="right " data-stat="pass_cmp_perc">64.8</td>
+            <td class="right " data-stat="pass_yds">3113</td>
+            <td class="right " data-stat="pass_td">25</td>
+            <td class="right " data-stat="pass_td_perc">6.3</td>
+            <td class="right " data-stat="pass_int">6</td>
+            <td class="right " data-stat="pass_int_perc">1.5</td>
+            <td class="right " data-stat="pass_first_down">135</td>
+            <td class="right " data-stat="pass_long">69</td>
+            <td class="right " data-stat="pass_yds_per_att">7.8</td>
+            <td class="right " data-stat="pass_adj_yds_per_att">8.4</td>
+            <td class="right " data-stat="pass_yds_per_cmp">12.0</td>
+            <td class="right " data-stat="pass_yds_per_g">222.4</td>
+            <td class="right " data-stat="pass_rating">103.1</td>
+            <td class="right " data-stat="qbr">54.7</td>
+            <td class="right " data-stat="pass_sacked">33</td>
+            <td class="right " data-stat="pass_sacked_yds">266</td>
+            <td class="right " data-stat="pass_sacked_perc">7.6</td>
+            <td class="right " data-stat="pass_net_yds_per_att">6.58</td>
+            <td class="right " data-stat="pass_adj_net_yds_per_att">7.11</td>
+            <td class="right iz" data-stat="comebacks">0</td>
+            <td class="right " data-stat="gwd">1</td>
+            <td class="right " data-stat="av">12</td>
+            <td class="left " data-stat="awards"><a
+                    href="https://www.pro-football-reference.com/years/2021/probowl.htm">PB</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th class="left " colspan="2" data-stat="year_id" scope="row">Career</th>
+            <td class="left iz" data-stat="team"></td>
+            <td class="left iz" data-stat="pos"></td>
+            <td class="right iz" data-stat="uniform_number"></td>
+            <td class="right " data-stat="g">158</td>
+            <td class="right " data-stat="gs">158</td>
+            <td class="right " csk="104" data-stat="qb_rec">104-53-1</td>
+            <td class="right " data-stat="pass_cmp">3079</td>
+            <td class="right " data-stat="pass_att">4735</td>
+            <td class="right " data-stat="pass_cmp_perc">65</td>
+            <td class="right " data-stat="pass_yds">37059</td>
+            <td class="right " data-stat="pass_td">292</td>
+            <td class="right " data-stat="pass_td_perc">6.2</td>
+            <td class="right " data-stat="pass_int">87</td>
+            <td class="right " data-stat="pass_int_perc">1.8</td>
+            <td class="right " data-stat="pass_first_down">1743</td>
+            <td class="right " data-stat="pass_long">80</td>
+            <td class="right " data-stat="pass_yds_per_att">7.8</td>
+            <td class="right " data-stat="pass_adj_yds_per_att">8.2</td>
+            <td class="right " data-stat="pass_yds_per_cmp">12.0</td>
+            <td class="right " data-stat="pass_yds_per_g">234.6</td>
+            <td class="right " data-stat="pass_rating">101.8</td>
+            <td class="right iz" data-stat="qbr"></td>
+            <td class="right " data-stat="pass_sacked">427</td>
+            <td class="right " data-stat="pass_sacked_yds">2838</td>
+            <td class="right " data-stat="pass_sacked_perc">8.3</td>
+            <td class="right " data-stat="pass_net_yds_per_att">6.63</td>
+            <td class="right " data-stat="pass_adj_net_yds_per_att">7.00</td>
+            <td class="right " data-stat="comebacks">24</td>
+            <td class="right " data-stat="gwd">32</td>
+            <td class="right " data-stat="av">158</td>
+            <td class="left iz" data-stat="awards"></td>
+        </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<ItemGroup>
+		<ProjectReference Include="..\Fantasy.Nfl.Lifetime.Domain\Fantasy.Nfl.Lifetime.Domain.csproj"/>
+	</ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="AWSSDK.S3" Version="3.7.9.28"/>
+		<PackageReference Include="HtmlAgilityPack" Version="1.11.43"/>
+	</ItemGroup>
+</Project>

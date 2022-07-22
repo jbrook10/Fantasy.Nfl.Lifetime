@@ -1,0 +1,8 @@
+<mat-card class="leaderboard-card">
+  <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="10px">
+    <div *ngFor="let owner of LeagueData.Owners" >
+      <app-total-stats [owner]="owner" [onlyCounting]="false"></app-total-stats>
+    </div>
+  </div>
+
+</mat-card>

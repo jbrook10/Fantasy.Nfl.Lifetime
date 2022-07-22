@@ -1,0 +1,48 @@
+Jeremy | Joe Burrow | QB | BurrJo01
+Jeremy | Russell Wilson | QB | WilsRu00
+Jeremy | Trey Lance | QB | LancTr00
+Jeremy | Caleb Williams | QB |
+Jeremy | Austin Ekeler | RB | EkelAu00
+Jeremy | David Montgomery | RB | MontDa01
+Jeremy | Darrel Williams | RB | WillDa10
+Jeremy | Melvin Gordon | RB | GordMe00
+Jeremy | Saquon Barkley | RB | BarkSa00
+Jeremy | Zachary Evans | RB | 
+Jeremy | Rashaad Penny | RB | PennRa00
+Jeremy | Dameon Pierce | RB | PierDa01
+Jeremy | Dallas Goedert | TE | GoedDa00
+Jeremy | Hunter Henry | TE | HenrHu00
+Jeremy | Brock Bowers| TE | 
+Jeremy | Brandin Cooks | WR | CookBr00
+Jeremy | Garrett Wilson | WR | WilsGa00
+Jeremy | Darnell Mooney | WR | MoonDa00
+Jeremy | Jaylen Waddle | WR | WaddJa00
+Jeremy | Terrace Marshall Jr. | WR | MarsTe00
+Jeremy | Rashod Bateman | WR | BateRa00
+Jeremy | Rondale Moore | WR | MoorRo02
+Jeremy | Wan'Dale Robinson | WR | RobiWa01
+Jeremy | Skyy Moore | WR | MoorSk01
+Ryan B. | Dak Prescott | QB | PresDa01
+Ryan B. | Derek Carr | QB | CarrDe02
+Ryan B. | Quinn Ewers | QB |
+Ryan B. | Jaxson Dart | QB |
+Ryan B. | Jonathan Taylor | RB | TaylJo02
+Ryan B. | Tony Pollard | RB | PollTo00
+Ryan B. | Antonio Gibson | RB | GibsAn00
+Ryan B. | Ezekiel Elliott | RB | ElliEz00
+Ryan B. | Kenneth Gainwell | RB | GainKe00
+Ryan B. | Bijan Robinson | RB | 
+Ryan B. | Kyren Williams | RB | WillKy02
+Ryan B. | Braelon Allen | RB |
+Ryan B. | Darren Waller | TE | WallDa01
+Ryan B. | Michael Mayer | TE |
+Ryan B. | Trey McBride | TE | McBrTr01
+Ryan B. | Jerry Jeudy | WR | JeudJe00
+Ryan B. | Terry McLaurin | WR | McLaTe00
+Ryan B. | K.J. Hamler | WR | HamlKJ00
+Ryan B. | D.K. Metcalf | WR | MetcDK00
+Ryan B. | Elijah Moore | WR | MoorEl00
+Ryan B. | Marvin Mims | WR | 
+Ryan B. | Christian Watson | WR | WatsCh00
+Ryan B. | Jaxon Smith-Njigba | WR |
+Ryan B. | Xavier Worthy | WR |

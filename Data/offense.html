@@ -1,0 +1,515 @@
+<table class="stats_table sortable row_summable per_match_toggle" data-cols-to-freeze="1,3" id="rushing_and_receiving">
+    <caption>Rushing &amp; Receiving Table</caption>
+    <colgroup>
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+    </colgroup>
+    <thead>
+        <tr class="over_header">
+            <th aria-label="" class=" over_header center" colspan="5" data-stat=""></th>
+            <th aria-label="" class=" over_header center" colspan="2" data-stat="header_g">Games</th>
+            <th aria-label="" class=" over_header center" colspan="8" data-stat="header_rush">Rushing</th>
+            <th aria-label="" class=" over_header center" colspan="11" data-stat="header_rec">Receiving</th>
+            <th aria-label="" class=" over_header center" colspan="3" data-stat="header_total_yards">Total Yds</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th aria-label="Year" class=" poptip sort_default_asc left" data-stat="year_id" scope="col">Year</th>
+            <th aria-label="Age" class=" poptip sort_default_asc center" data-stat="age"
+                data-tip="Player&#39;s age on December 31st of that year" scope="col">Age</th>
+            <th aria-label="Tm" class=" poptip sort_default_asc show_partial_when_sorting left" data-stat="team"
+                scope="col">Tm</th>
+            <th aria-label="Pos" class=" poptip sort_default_asc left" data-stat="pos"
+                data-tip="&lt;b&gt;Position&lt;/b&gt;&lt;br&gt;In player and team season stats,&lt;br&gt;Capitals indicates primary starter.&lt;br&gt;Lower-case means part-time starter."
+                scope="col">Pos</th>
+            <th aria-label="No." class=" poptip sort_default_asc center" data-stat="uniform_number"
+                data-tip="Uniform number" scope="col">No.</th>
+            <th aria-label="Games" class=" poptip center" data-over-header="Games" data-stat="g" data-tip="Games played"
+                scope="col">G</th>
+            <th aria-label="Games Started" class=" poptip center" data-over-header="Games" data-stat="gs"
+                data-tip="Games started as an offensive or defensive player" scope="col">GS</th>
+            <th aria-label="Rushing Att" class=" poptip center" data-over-header="Rushing" data-stat="rush_att"
+                data-tip="Rushing Attempts (sacks not included in NFL)" scope="col">Rush</th>
+            <th aria-label="Rushing Yds" class=" poptip center" data-over-header="Rushing" data-stat="rush_yds"
+                data-tip="Rushing Yards Gained (sack yardage is not included by NFL)" scope="col">Yds</th>
+            <th aria-label="Rushing TD" class=" poptip center" data-over-header="Rushing" data-stat="rush_td"
+                data-tip="Rushing Touchdowns" scope="col">TD</th>
+            <th aria-label="Rush 1st Downs" class=" poptip center" data-over-header="Rushing"
+                data-stat="rush_first_down" data-tip="First downs rushing" scope="col">1D</th>
+            <th aria-label="Long Rush" class=" poptip center" data-over-header="Rushing" data-stat="rush_long"
+                data-tip="Longest Rushing Attempt" scope="col">Lng</th>
+            <th aria-label="Yds/Rushing Att" class=" poptip hide_non_quals center" data-filter="1"
+                data-name="Yds/Rushing Att" data-over-header="Rushing" data-stat="rush_yds_per_att"
+                data-tip="Rushing Yards per Attempt&lt;br&gt;Minimum 6.25 rushes per game scheduled to qualify as leader.&lt;br /&gt;Minimum 750 rushes to qualify as career leader."
+                scope="col">Y/A</th>
+            <th aria-label="Rushing Yds/Game" class=" poptip hide_non_quals center" data-filter="1"
+                data-name="Rushing Yds/Game" data-over-header="Rushing" data-stat="rush_yds_per_g"
+                data-tip="Rushing Yards per Game&lt;br&gt;(minimum half a game per game scheduled to qualify as leader)&lt;br&gt;(Rushing Yards)/(Games Played)"
+                scope="col">Y/G</th>
+            <th aria-label="Rushing Att/Game" class=" poptip hide_non_quals center" data-filter="1"
+                data-name="Rushing Att/Game" data-over-header="Rushing" data-stat="rush_att_per_g"
+                data-tip="Rushing Attempts per Game&lt;br&gt;(minimum half a game per game scheduled to qualify as leader)&lt;br&gt;(Rushing Attempts)/(Games Played)"
+                scope="col">A/G</th>
+            <th aria-label="Targets" class=" poptip center" data-over-header="Receiving" data-stat="targets"
+                data-tip="Pass Targets (since 1992, derived from NFL play-by-play data)" scope="col">Tgt</th>
+            <th aria-label="Receptions" class=" poptip center" data-over-header="Receiving" data-stat="rec"
+                data-tip="Receptions" scope="col">Rec</th>
+            <th aria-label="Receiving Yds" class=" poptip center" data-over-header="Receiving" data-stat="rec_yds"
+                data-tip="Receiving Yards" scope="col">Yds</th>
+            <th aria-label="Yds/Reception" class=" poptip hide_non_quals center" data-filter="1"
+                data-name="Yds/Reception" data-over-header="Receiving" data-stat="rec_yds_per_rec"
+                data-tip="Receiving Yards per Reception&lt;br&gt;Minimum 1.875 catches per game scheduled to qualify as leader.&lt;br /&gt;Minimum 200 receptions to qualify as career leader."
+                scope="col">Y/R</th>
+            <th aria-label="Receiving TD" class=" poptip center" data-over-header="Receiving" data-stat="rec_td"
+                data-tip="Receiving Touchdowns" scope="col">TD</th>
+            <th aria-label="Receiving 1st Downs" class=" poptip center" data-over-header="Receiving"
+                data-stat="rec_first_down" data-tip="First downs receiving" scope="col">1D</th>
+            <th aria-label="Long Reception" class=" poptip center" data-over-header="Receiving" data-stat="rec_long"
+                data-tip="Longest Reception" scope="col">Lng</th>
+            <th aria-label="Receptions/Game" class=" poptip hide_non_quals center" data-filter="1"
+                data-name="Receptions/Game" data-over-header="Receiving" data-stat="rec_per_g"
+                data-tip="Receptions per Game&lt;br&gt;(minimum half a game per game scheduled to qualify as leader)&lt;br&gt;(Receptions)/(Games Played)"
+                scope="col">R/G</th>
+            <th aria-label="Receiving Yds/Game" class=" poptip hide_non_quals center" data-filter="1"
+                data-name="Receiving Yds/Game" data-over-header="Receiving" data-stat="rec_yds_per_g"
+                data-tip="Receiving Yards per Game&lt;br&gt;(minimum half a game played per game scheduled to qualify as leader, 32 games for career leaders)&lt;br&gt;(Receiving Yards)/(Games Played)"
+                scope="col">Y/G</th>
+            <th aria-label="Catch Pct" class=" poptip hide_non_quals center" data-over-header="Receiving"
+                data-stat="catch_pct" data-tip="Catch%, receptions divided by targets (since 1992)" scope="col">Ctch%
+            </th>
+            <th aria-label="Yds/Target" class=" poptip hide_non_quals center" data-filter="1" data-name="Yds/Target"
+                data-over-header="Receiving" data-stat="rec_yds_per_tgt"
+                data-tip="Receiving Yards per Target (target numbers since 1992)" scope="col">Y/Tgt</th>
+            <th aria-label="Touches" class=" poptip center" data-over-header="Total Yds" data-stat="touches"
+                data-tip="Touches: Rushing Attempts and Receptions" scope="col">Touch</th>
+            <th aria-label="Yds/Touch" class=" poptip hide_non_quals center" data-filter="1" data-name="Yds/Touch"
+                data-over-header="Total Yds" data-stat="yds_per_touch"
+                data-tip="Scrimmage yards per touch: Rushing + Receiving Yardage per opportunity&lt;br&gt;Minimum 6.25 touches per scheduled game to qualify as leader.&lt;br /&gt;Minimum 750 touches to qualify as career leader."
+                scope="col">Y/Tch</th>
+            <th aria-label="Yds From Scrimmage" class=" poptip center" data-over-header="Total Yds"
+                data-stat="yds_from_scrimmage" data-tip="Yards from Scrimmage: Receiving and Rushing Yards" scope="col">
+                YScm</th>
+            <th aria-label="Rushing/Receiving TD" class=" poptip center" data-stat="rush_receive_td"
+                data-tip="Rushing and Receiving Touchdowns" scope="col">RRTD</th>
+            <th aria-label="Fumbles" class=" poptip center" data-over-header="Fumbles" data-stat="fumbles"
+                data-tip="Number of times fumbled both lost and recovered by own team&lt;br /&gt;These represent ALL fumbles by the player on offense, defense, and special teams.&lt;br /&gt;Available for player games since 1990."
+                scope="col">Fmb</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="full_table" id="rushing_and_receiving.2012">
+            <th class="left " csk="2012" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2012/">2012</a>*</th>
+            <td class="right " data-stat="age">24</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2012.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " data-stat="rush_att">94</td>
+            <td class="right " data-stat="rush_yds">489</td>
+            <td class="right " data-stat="rush_td">4</td>
+            <td class="right " data-stat="rush_first_down">29</td>
+            <td class="right " data-stat="rush_long">25</td>
+            <td class="right " data-stat="rush_yds_per_att">5.2</td>
+            <td class="right " data-stat="rush_yds_per_g">30.6</td>
+            <td class="right " data-stat="rush_att_per_g">5.9</td>
+            <td class="right iz" data-stat="targets"></td>
+            <td class="right iz" data-stat="rec"></td>
+            <td class="right iz" data-stat="rec_yds"></td>
+            <td class="right iz" data-stat="rec_yds_per_rec"></td>
+            <td class="right iz" data-stat="rec_td"></td>
+            <td class="right iz" data-stat="rec_first_down"></td>
+            <td class="right iz" data-stat="rec_long"></td>
+            <td class="right iz" data-stat="rec_per_g"></td>
+            <td class="right iz" data-stat="rec_yds_per_g"></td>
+            <td class="right iz" data-stat="catch_pct"></td>
+            <td class="right iz" data-stat="rec_yds_per_tgt"></td>
+            <td class="right " data-stat="touches">94</td>
+            <td class="right " data-stat="yds_per_touch">5.2</td>
+            <td class="right " data-stat="yds_from_scrimmage">489</td>
+            <td class="right " data-stat="rush_receive_td">4</td>
+            <td class="right " data-stat="fumbles">6</td>
+        </tr>
+        <tr class="full_table" id="rushing_and_receiving.2013">
+            <th class="left " csk="2013" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2013/">2013</a>*</th>
+            <td class="right " data-stat="age">25</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2013.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " data-stat="rush_att">96</td>
+            <td class="right " data-stat="rush_yds">539</td>
+            <td class="right " data-stat="rush_td">1</td>
+            <td class="right " data-stat="rush_first_down">31</td>
+            <td class="right " data-stat="rush_long">27</td>
+            <td class="right " data-stat="rush_yds_per_att">5.6</td>
+            <td class="right " data-stat="rush_yds_per_g">33.7</td>
+            <td class="right " data-stat="rush_att_per_g">6.0</td>
+            <td class="right iz" data-stat="targets"></td>
+            <td class="right iz" data-stat="rec"></td>
+            <td class="right iz" data-stat="rec_yds"></td>
+            <td class="right iz" data-stat="rec_yds_per_rec"></td>
+            <td class="right iz" data-stat="rec_td"></td>
+            <td class="right iz" data-stat="rec_first_down"></td>
+            <td class="right iz" data-stat="rec_long"></td>
+            <td class="right iz" data-stat="rec_per_g"></td>
+            <td class="right iz" data-stat="rec_yds_per_g"></td>
+            <td class="right iz" data-stat="catch_pct"></td>
+            <td class="right iz" data-stat="rec_yds_per_tgt"></td>
+            <td class="right " data-stat="touches">96</td>
+            <td class="right " data-stat="yds_per_touch">5.6</td>
+            <td class="right " data-stat="yds_from_scrimmage">539</td>
+            <td class="right " data-stat="rush_receive_td">1</td>
+            <td class="right " data-stat="fumbles">10</td>
+        </tr>
+        <tr class="full_table" id="rushing_and_receiving.2014">
+            <th class="left " csk="2014" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2014/">2014</a>*</th>
+            <td class="right " data-stat="age">26</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2014.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " data-stat="rush_att">118</td>
+            <td class="right " data-stat="rush_yds">849</td>
+            <td class="right " data-stat="rush_td">6</td>
+            <td class="right " data-stat="rush_first_down">47</td>
+            <td class="right " data-stat="rush_long">55</td>
+            <td class="right " data-stat="rush_yds_per_att"><strong>7.2</strong></td>
+            <td class="right " data-stat="rush_yds_per_g">53.1</td>
+            <td class="right " data-stat="rush_att_per_g">7.4</td>
+            <td class="right " data-stat="targets">1</td>
+            <td class="right " data-stat="rec">1</td>
+            <td class="right " data-stat="rec_yds">17</td>
+            <td class="right " data-stat="rec_yds_per_rec">17.0</td>
+            <td class="right iz" data-stat="rec_td">0</td>
+            <td class="right " data-stat="rec_first_down">1</td>
+            <td class="right " data-stat="rec_long">17</td>
+            <td class="right " data-stat="rec_per_g">0.1</td>
+            <td class="right " data-stat="rec_yds_per_g">1.1</td>
+            <td class="right " data-stat="catch_pct">100.0%</td>
+            <td class="right " data-stat="rec_yds_per_tgt">17.0</td>
+            <td class="right " data-stat="touches">119</td>
+            <td class="right " data-stat="yds_per_touch">7.3</td>
+            <td class="right " data-stat="yds_from_scrimmage">866</td>
+            <td class="right " data-stat="rush_receive_td">6</td>
+            <td class="right " data-stat="fumbles">11</td>
+        </tr>
+        <tr class="full_table" id="rushing_and_receiving.2015">
+            <th class="left " csk="2015" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2015/">2015</a>*</th>
+            <td class="right " data-stat="age">27</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2015.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " data-stat="rush_att">103</td>
+            <td class="right " data-stat="rush_yds">553</td>
+            <td class="right " data-stat="rush_td">1</td>
+            <td class="right " data-stat="rush_first_down">31</td>
+            <td class="right " data-stat="rush_long">24</td>
+            <td class="right " data-stat="rush_yds_per_att">5.4</td>
+            <td class="right " data-stat="rush_yds_per_g">34.6</td>
+            <td class="right " data-stat="rush_att_per_g">6.4</td>
+            <td class="right iz" data-stat="targets"></td>
+            <td class="right iz" data-stat="rec"></td>
+            <td class="right iz" data-stat="rec_yds"></td>
+            <td class="right iz" data-stat="rec_yds_per_rec"></td>
+            <td class="right iz" data-stat="rec_td"></td>
+            <td class="right iz" data-stat="rec_first_down"></td>
+            <td class="right iz" data-stat="rec_long"></td>
+            <td class="right iz" data-stat="rec_per_g"></td>
+            <td class="right iz" data-stat="rec_yds_per_g"></td>
+            <td class="right iz" data-stat="catch_pct"></td>
+            <td class="right iz" data-stat="rec_yds_per_tgt"></td>
+            <td class="right " data-stat="touches">103</td>
+            <td class="right " data-stat="yds_per_touch">5.4</td>
+            <td class="right " data-stat="yds_from_scrimmage">553</td>
+            <td class="right " data-stat="rush_receive_td">1</td>
+            <td class="right " data-stat="fumbles">7</td>
+        </tr>
+        <tr class="full_table" id="rushing_and_receiving.2016">
+            <th class="left " csk="2016" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2016/">2016</a></th>
+            <td class="right " data-stat="age">28</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2016.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " data-stat="rush_att">72</td>
+            <td class="right " data-stat="rush_yds">259</td>
+            <td class="right " data-stat="rush_td">1</td>
+            <td class="right " data-stat="rush_first_down">18</td>
+            <td class="right " data-stat="rush_long">18</td>
+            <td class="right " data-stat="rush_yds_per_att">3.6</td>
+            <td class="right " data-stat="rush_yds_per_g">16.2</td>
+            <td class="right " data-stat="rush_att_per_g">4.5</td>
+            <td class="right " data-stat="targets">2</td>
+            <td class="right " data-stat="rec">2</td>
+            <td class="right " data-stat="rec_yds">14</td>
+            <td class="right " data-stat="rec_yds_per_rec">7.0</td>
+            <td class="right " data-stat="rec_td">1</td>
+            <td class="right " data-stat="rec_first_down">1</td>
+            <td class="right " data-stat="rec_long">15</td>
+            <td class="right " data-stat="rec_per_g">0.1</td>
+            <td class="right " data-stat="rec_yds_per_g">0.9</td>
+            <td class="right " data-stat="catch_pct">100.0%</td>
+            <td class="right " data-stat="rec_yds_per_tgt">7.0</td>
+            <td class="right " data-stat="touches">74</td>
+            <td class="right " data-stat="yds_per_touch">3.7</td>
+            <td class="right " data-stat="yds_from_scrimmage">273</td>
+            <td class="right " data-stat="rush_receive_td">2</td>
+            <td class="right " data-stat="fumbles">8</td>
+        </tr>
+        <tr class="full_table" id="rushing_and_receiving.2017">
+            <th class="left " csk="2017" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2017/">2017</a>*</th>
+            <td class="right " data-stat="age">29</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2017.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " data-stat="rush_att">95</td>
+            <td class="right " data-stat="rush_yds">586</td>
+            <td class="right " data-stat="rush_td">3</td>
+            <td class="right " data-stat="rush_first_down">36</td>
+            <td class="right " data-stat="rush_long">31</td>
+            <td class="right " data-stat="rush_yds_per_att">6.2</td>
+            <td class="right " data-stat="rush_yds_per_g">36.6</td>
+            <td class="right " data-stat="rush_att_per_g">5.9</td>
+            <td class="right iz" data-stat="targets"></td>
+            <td class="right iz" data-stat="rec"></td>
+            <td class="right iz" data-stat="rec_yds"></td>
+            <td class="right iz" data-stat="rec_yds_per_rec"></td>
+            <td class="right iz" data-stat="rec_td"></td>
+            <td class="right iz" data-stat="rec_first_down"></td>
+            <td class="right iz" data-stat="rec_long"></td>
+            <td class="right iz" data-stat="rec_per_g"></td>
+            <td class="right iz" data-stat="rec_yds_per_g"></td>
+            <td class="right iz" data-stat="catch_pct"></td>
+            <td class="right iz" data-stat="rec_yds_per_tgt"></td>
+            <td class="right " data-stat="touches">95</td>
+            <td class="right " data-stat="yds_per_touch">6.2</td>
+            <td class="right " data-stat="yds_from_scrimmage">586</td>
+            <td class="right " data-stat="rush_receive_td">3</td>
+            <td class="right " data-stat="fumbles">14</td>
+        </tr>
+        <tr class="full_table" id="rushing_and_receiving.2018">
+            <th class="left " csk="2018" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2018/">2018</a>*</th>
+            <td class="right " data-stat="age">30</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2018.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " data-stat="rush_att">67</td>
+            <td class="right " data-stat="rush_yds">376</td>
+            <td class="right iz" data-stat="rush_td">0</td>
+            <td class="right " data-stat="rush_first_down">23</td>
+            <td class="right " data-stat="rush_long">40</td>
+            <td class="right " data-stat="rush_yds_per_att">5.6</td>
+            <td class="right " data-stat="rush_yds_per_g">23.5</td>
+            <td class="right " data-stat="rush_att_per_g">4.2</td>
+            <td class="right " data-stat="targets">1</td>
+            <td class="right " data-stat="rec">1</td>
+            <td class="right " data-stat="rec_yds">-11</td>
+            <td class="right " data-stat="rec_yds_per_rec">-11.0</td>
+            <td class="right iz" data-stat="rec_td">0</td>
+            <td class="right iz" data-stat="rec_first_down">0</td>
+            <td class="right " data-stat="rec_long">-11</td>
+            <td class="right " data-stat="rec_per_g">0.1</td>
+            <td class="right " data-stat="rec_yds_per_g">-0.7</td>
+            <td class="right " data-stat="catch_pct">100.0%</td>
+            <td class="right " data-stat="rec_yds_per_tgt">-11.0</td>
+            <td class="right " data-stat="touches">68</td>
+            <td class="right " data-stat="yds_per_touch">5.4</td>
+            <td class="right " data-stat="yds_from_scrimmage">365</td>
+            <td class="right iz" data-stat="rush_receive_td">0</td>
+            <td class="right " data-stat="fumbles">10</td>
+        </tr>
+        <tr class="full_table" id="rushing_and_receiving.2019">
+            <th class="left " csk="2019" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2019/">2019</a>*</th>
+            <td class="right " data-stat="age">31</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2019.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " data-stat="rush_att">75</td>
+            <td class="right " data-stat="rush_yds">342</td>
+            <td class="right " data-stat="rush_td">3</td>
+            <td class="right " data-stat="rush_first_down">17</td>
+            <td class="right " data-stat="rush_long">21</td>
+            <td class="right " data-stat="rush_yds_per_att">4.6</td>
+            <td class="right " data-stat="rush_yds_per_g">21.4</td>
+            <td class="right " data-stat="rush_att_per_g">4.7</td>
+            <td class="right iz" data-stat="targets"></td>
+            <td class="right iz" data-stat="rec"></td>
+            <td class="right iz" data-stat="rec_yds"></td>
+            <td class="right iz" data-stat="rec_yds_per_rec"></td>
+            <td class="right iz" data-stat="rec_td"></td>
+            <td class="right iz" data-stat="rec_first_down"></td>
+            <td class="right iz" data-stat="rec_long"></td>
+            <td class="right iz" data-stat="rec_per_g"></td>
+            <td class="right iz" data-stat="rec_yds_per_g"></td>
+            <td class="right iz" data-stat="catch_pct"></td>
+            <td class="right iz" data-stat="rec_yds_per_tgt"></td>
+            <td class="right " data-stat="touches">75</td>
+            <td class="right " data-stat="yds_per_touch">4.6</td>
+            <td class="right " data-stat="yds_from_scrimmage">342</td>
+            <td class="right " data-stat="rush_receive_td">3</td>
+            <td class="right " data-stat="fumbles">8</td>
+        </tr>
+        <tr class="full_table" id="rushing_and_receiving.2020">
+            <th class="left " csk="2020" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2020/">2020</a>*</th>
+            <td class="right " data-stat="age">32</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2020.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">16</td>
+            <td class="right " data-stat="gs">16</td>
+            <td class="right " data-stat="rush_att">83</td>
+            <td class="right " data-stat="rush_yds">513</td>
+            <td class="right " data-stat="rush_td">2</td>
+            <td class="right " data-stat="rush_first_down">25</td>
+            <td class="right " data-stat="rush_long">38</td>
+            <td class="right " data-stat="rush_yds_per_att">6.2</td>
+            <td class="right " data-stat="rush_yds_per_g">32.1</td>
+            <td class="right " data-stat="rush_att_per_g">5.2</td>
+            <td class="right iz" data-stat="targets"></td>
+            <td class="right iz" data-stat="rec"></td>
+            <td class="right iz" data-stat="rec_yds"></td>
+            <td class="right iz" data-stat="rec_yds_per_rec"></td>
+            <td class="right iz" data-stat="rec_td"></td>
+            <td class="right iz" data-stat="rec_first_down"></td>
+            <td class="right iz" data-stat="rec_long"></td>
+            <td class="right iz" data-stat="rec_per_g"></td>
+            <td class="right iz" data-stat="rec_yds_per_g"></td>
+            <td class="right iz" data-stat="catch_pct"></td>
+            <td class="right iz" data-stat="rec_yds_per_tgt"></td>
+            <td class="right " data-stat="touches">83</td>
+            <td class="right " data-stat="yds_per_touch">6.2</td>
+            <td class="right " data-stat="yds_from_scrimmage">513</td>
+            <td class="right " data-stat="rush_receive_td">2</td>
+            <td class="right " data-stat="fumbles">7</td>
+        </tr>
+        <tr class="full_table" id="rushing_and_receiving.2021">
+            <th class="left " csk="2021" data-stat="year_id" scope="row"><a
+                    href="https://www.pro-football-reference.com/years/2021/">2021</a>*</th>
+            <td class="right " data-stat="age">33</td>
+            <td class="left " data-stat="team"><a href="https://www.pro-football-reference.com/teams/sea/2021.htm"
+                    title="Seattle Seahawks">SEA</a></td>
+            <td class="left " data-stat="pos">QB</td>
+            <td class="right " data-stat="uniform_number">3</td>
+            <td class="right " data-stat="g">14</td>
+            <td class="right " data-stat="gs">14</td>
+            <td class="right " data-stat="rush_att">43</td>
+            <td class="right " data-stat="rush_yds">183</td>
+            <td class="right " data-stat="rush_td">2</td>
+            <td class="right " data-stat="rush_first_down">17</td>
+            <td class="right " data-stat="rush_long">17</td>
+            <td class="right " data-stat="rush_yds_per_att">4.3</td>
+            <td class="right " data-stat="rush_yds_per_g">13.1</td>
+            <td class="right " data-stat="rush_att_per_g">3.1</td>
+            <td class="right iz" data-stat="targets"></td>
+            <td class="right iz" data-stat="rec"></td>
+            <td class="right iz" data-stat="rec_yds"></td>
+            <td class="right iz" data-stat="rec_yds_per_rec"></td>
+            <td class="right iz" data-stat="rec_td"></td>
+            <td class="right iz" data-stat="rec_first_down"></td>
+            <td class="right iz" data-stat="rec_long"></td>
+            <td class="right iz" data-stat="rec_per_g"></td>
+            <td class="right iz" data-stat="rec_yds_per_g"></td>
+            <td class="right iz" data-stat="catch_pct"></td>
+            <td class="right iz" data-stat="rec_yds_per_tgt"></td>
+            <td class="right " data-stat="touches">43</td>
+            <td class="right " data-stat="yds_per_touch">4.3</td>
+            <td class="right " data-stat="yds_from_scrimmage">183</td>
+            <td class="right " data-stat="rush_receive_td">2</td>
+            <td class="right " data-stat="fumbles">6</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th class="left " colspan="2" data-stat="year_id" scope="row">Career</th>
+            <td class="left iz" data-stat="team"></td>
+            <td class="left iz" data-stat="pos"></td>
+            <td class="right iz" data-stat="uniform_number"></td>
+            <td class="right " data-stat="g">158</td>
+            <td class="right " data-stat="gs">158</td>
+            <td class="right " data-stat="rush_att">846</td>
+            <td class="right " data-stat="rush_yds">4689</td>
+            <td class="right " data-stat="rush_td">23</td>
+            <td class="right " data-stat="rush_first_down">274</td>
+            <td class="right " data-stat="rush_long">55</td>
+            <td class="right " data-stat="rush_yds_per_att">5.5</td>
+            <td class="right " data-stat="rush_yds_per_g">29.7</td>
+            <td class="right " data-stat="rush_att_per_g">5.4</td>
+            <td class="right " data-stat="targets">4</td>
+            <td class="right " data-stat="rec">4</td>
+            <td class="right " data-stat="rec_yds">20</td>
+            <td class="right " data-stat="rec_yds_per_rec">5.0</td>
+            <td class="right " data-stat="rec_td">1</td>
+            <td class="right " data-stat="rec_first_down">2</td>
+            <td class="right " data-stat="rec_long">17</td>
+            <td class="right iz" data-stat="rec_per_g">0.0</td>
+            <td class="right " data-stat="rec_yds_per_g">0.1</td>
+            <td class="right " data-stat="catch_pct">100.0%</td>
+            <td class="right " data-stat="rec_yds_per_tgt">5.0</td>
+            <td class="right " data-stat="touches">850</td>
+            <td class="right " data-stat="yds_per_touch">5.5</td>
+            <td class="right " data-stat="yds_from_scrimmage">4709</td>
+            <td class="right " data-stat="rush_receive_td">24</td>
+            <td class="right " data-stat="fumbles">87</td>
+        </tr>
+    </tfoot>
+</table>

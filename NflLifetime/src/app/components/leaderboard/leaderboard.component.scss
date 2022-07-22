@@ -1,0 +1,21 @@
+table {
+  width: 100%;
+  tr.mat-row, tr.mat-header-row {
+      height: 25px !important;
+      td {
+          font-size: 14px;
+          a {
+              text-decoration: none;
+              color: #000;
+          }
+      }
+  }
+
+  th {
+    font-weight: bold;
+  }
+}
+
+.leaderboard-card {
+  margin: 1em;
+}
