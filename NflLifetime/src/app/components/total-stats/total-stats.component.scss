@@ -1,5 +1,5 @@
 .header-data {
-  width: 300px;
+  width: 100%;
   background-color: rgb(228 226 226);
   border-radius: 5px;
   padding-left: 10px;
@@ -12,12 +12,16 @@
   }
 }
 
+.full-width-table {
+  width: 100%;
+}
+
 table {
   width: 100%;
   tr.mat-row, tr.mat-header-row {
       height: 24px !important;
       td {
-          font-size: 12px;
+          font-size: 13px;
           a {
               text-decoration: none;
               color: #000;
@@ -49,3 +53,7 @@ table {
   margin-left: 5px;
   font-size: 9px;
 }
+
+// .small-screen {
+//   width: 100%;
+// }

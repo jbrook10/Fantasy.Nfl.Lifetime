@@ -17,12 +17,11 @@ export class LeaderboardComponent implements OnInit, OnDestroy {
 
   SmallScreen = false;
   LeagueData!: ILeagueData;
-  displayedColumns = ['Name', 'Score'];
+  displayedColumns = ['Name', 'CountingScore', 'Score'];
 
   dataSource = new MatTableDataSource<IOwner>();
 
   $Destroyed = new Subject();
-
 
   @ViewChild(MatSort) sort: MatSort = new MatSort();
 
@@ -44,18 +43,23 @@ export class LeaderboardComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.dataService.LeagueData$.pipe(takeUntil(this.$Destroyed)).subscribe(data => {
       this.LeagueData = data;
-
-      this.dataSource.data = this.LeagueData.Owners;
-      this.dataSource.sort = this.sort;
-
-      const sortState: Sort = {active: 'Score', direction: 'desc'};
-      this.sort.active = sortState.active;
-      this.sort.direction = sortState.direction;
-      this.sort.sortChange.emit(sortState);
-
+      this.buildData();
 
     });
 
+  }
+
+  buildData(): void {
+
+    this.LeagueData.Owners.sort((a, b) => b.CountingScore - a.CountingScore);
+
+    this.dataSource.data = this.LeagueData.Owners;
+    this.dataSource.sort = this.sort;
+
+    const sortState: Sort = {active: 'CountingScore', direction: 'desc'};
+    this.sort.active = sortState.active;
+    this.sort.direction = sortState.direction;
+    this.sort.sortChange.emit(sortState);
   }
 
 }

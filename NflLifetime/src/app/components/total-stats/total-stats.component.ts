@@ -17,6 +17,7 @@ export class TotalStatsComponent implements OnInit {
 
   @Input() owner!: IOwner;
   @Input() onlyCounting!: boolean;
+  @Input() smallScreen!: boolean;
 
   constructor() { }
 

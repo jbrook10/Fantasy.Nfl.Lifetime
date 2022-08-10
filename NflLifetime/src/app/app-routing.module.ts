@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { TotalsComponent } from './components/totals/totals.component';
@@ -13,7 +14,9 @@ const routes: Routes = [
   },
   {
     path: 'totals', component: TotalsComponent
-
+  },
+  {
+    path: 'analytics', component: AnalyticsComponent
   },
   {
     path: '',

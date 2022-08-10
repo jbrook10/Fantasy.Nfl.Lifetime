@@ -24,6 +24,7 @@ public class Owner
 
     public decimal Score { get; set; }
     public List<Player> Players { get; set; } = new List<Player>();
+    public object CountingScore { get; set; }
 }
 
 public class Player

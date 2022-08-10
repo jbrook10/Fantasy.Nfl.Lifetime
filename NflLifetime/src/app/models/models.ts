@@ -11,10 +11,8 @@ export interface ILeagueData {
 export interface IOwner {
   Name: string;
   Score: number;
+  CountingScore: number;
   Players: IPlayer[];
-
-  // client side only
-  TotalScore: number;
 }
 
 export interface IPlayer {
@@ -37,4 +35,9 @@ export interface IPlayer {
 
   // front end only
   Scoring: boolean;
+}
+export interface ITotalView {
+  FantasyOwner: string;
+  Count: number;
+  IndexTotal: number;
 }

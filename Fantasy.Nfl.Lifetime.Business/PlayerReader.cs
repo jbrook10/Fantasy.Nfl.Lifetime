@@ -82,6 +82,11 @@ public class PlayerReader
         foreach (var owner in leagueData.Owners)
         {
             owner.Score = owner.Players.Sum(p => p.Score);
+            var sortedPlayers = owner.Players.OrderByDescending(p => p.Score);
+            owner.CountingScore =  sortedPlayers.Where(p => p.Position == PositionType.QB).Take(1).Sum(p => p.Score) + 
+                                   sortedPlayers.Where(p => p.Position == PositionType.RB).Take(2).Sum(p => p.Score) +
+                                   sortedPlayers.Where(p => p.Position == PositionType.WR).Take(3).Sum(p => p.Score) +
+                                   sortedPlayers.Where(p => p.Position == PositionType.TE).Take(1).Sum(p => p.Score);
         }
 
         return leagueData;

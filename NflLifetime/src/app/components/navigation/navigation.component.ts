@@ -34,7 +34,6 @@ export class NavigationComponent implements OnInit {
 
     for (let index = 2019; index <= today.getFullYear(); index++) {
       this.Years.push(index)
-
     }
    }
 

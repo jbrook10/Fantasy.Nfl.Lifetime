@@ -1,15 +1,15 @@
-<mat-card>
+<mat-card [class.small-screen]="!!smallScreen">
   <mat-card-content>
     <div fxLayout="row" fxLayoutAlign="space-between center" class="header-data">
       <div class="name">
         {{owner.Name}}
       </div>
       <div>
-        {{owner.Score}}
+        {{owner.CountingScore}}
       </div>
     </div>
 
-    <table mat-table class="full-width-table" matSort aria-label="Elements" [dataSource]="dataSource" matSort>
+    <table mat-table class="full-width-table"  matSort aria-label="Elements" [dataSource]="dataSource" matSort>
 
       <!-- Name Column -->
       <ng-container matColumnDef="Name">

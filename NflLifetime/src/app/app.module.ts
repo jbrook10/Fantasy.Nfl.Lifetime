@@ -24,6 +24,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LayoutModule } from '@angular/cdk/layout';
 import { TotalStatsComponent } from './components/total-stats/total-stats.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { AnalyticsComponent } from './components/analytics/analytics.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     NavigationComponent,
     StatsComponent,
     TotalsComponent,
-    TotalStatsComponent
+    TotalStatsComponent,
+    AnalyticsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatChipsModule,
     MatProgressSpinnerModule,
     MatDialogModule,
+
+    NgxChartsModule
 
 
   ],
