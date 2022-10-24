@@ -77,6 +77,7 @@ public class PlayerReader
 
             matchingOwner.Players.Add(player);
             Console.WriteLine(rosterEntry.RosterText());
+            System.Threading.Thread.Sleep(250);
         }
 
         foreach (var owner in leagueData.Owners)
@@ -124,9 +125,11 @@ public class PlayerReader
         if (string.IsNullOrEmpty(entry.Link)) { return; }
 
         var divValue = seasonType == SeasonType.Regular ? "div_passing" : "div_passing_playoffs";
-        var url = $@"https://widgets.sports-reference.com/wg.fcgi?site=pfr&url=%2Fplayers%2F{entry.RosterLetter()}%2F{entry.Link}.htm&div={divValue}&cx={DateTime.UtcNow.ToString("o")}";
+        //var url = $@"https://widgets.sports-reference.com/wg.fcgi?site=pfr&url=%2Fplayers%2F{entry.RosterLetter()}%2F{entry.Link}.htm&div={divValue}&cx={DateTime.UtcNow.ToString("o")}";
+        var url = $@"https://www.pro-football-reference.com/players/{entry.RosterLetter()}/{entry.Link}.htm";
+       // var document = await GetHtmlDocument(url);
 
-        var document = await GetHtmlDocument(url);
+        var document = await GetStringDocument(url, divValue);
 
         if (document == null) { return; }
 
@@ -150,9 +153,10 @@ public class PlayerReader
             divValue = seasonType == SeasonType.Regular ? "div_receiving_and_rushing" : "div_receiving_and_rushing_playoffs";
         }
 
-        var url = $"https://widgets.sports-reference.com/wg.fcgi?site=pfr&url=%2Fplayers%2F{entry.RosterLetter()}%2F{entry.Link}.htm&div={divValue}&cx={DateTime.UtcNow.ToString("o")}";
+        // var url = $"https://widgets.sports-reference.com/wg.fcgi?site=pfr&url=%2Fplayers%2F{entry.RosterLetter()}%2F{entry.Link}.htm&div={divValue}&cx={DateTime.UtcNow.ToString("o")}";
+        var url = $@"https://www.pro-football-reference.com/players/{entry.RosterLetter()}/{entry.Link}.htm";
 
-        var document = await GetHtmlDocument(url);
+        var document = await GetStringDocument(url, divValue);
 
         if (document == null) { return; }
 
@@ -201,5 +205,39 @@ public class PlayerReader
             return doc;
         }
         return null;
+    }
+
+    private async Task<HtmlDocument?> GetStringDocument(string url, string divName)
+    {
+        try
+        {
+            var content = await _client.GetStringAsync(url);
+
+                    var divNameIdx = content.IndexOf(divName);
+
+        if (divNameIdx < 0) {
+            return null;
+        }
+
+        var startTableIndex = content.IndexOf("<table", divNameIdx);
+        var endTableIndex = content.IndexOf("</table>", startTableIndex) + 8;
+
+        if (startTableIndex > 0)
+        {
+            var html = $"<html><body>{content.Substring(startTableIndex, endTableIndex - startTableIndex)}</body></html>";
+            HtmlDocument doc = new HtmlDocument();
+            doc.LoadHtml(html);
+
+            return doc;
+        }
+        return null;
+        }
+        catch (System.Exception)
+        {
+            Console.WriteLine($"Error: {url}");
+            return null;
+        } 
+
+
     }
 }

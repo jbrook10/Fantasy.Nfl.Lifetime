@@ -9,6 +9,6 @@ class Program
     static async Task Main(string[] args)
     {
         var playerReader = new PlayerReader();
-        await playerReader.CreateLeagueData(2021, Domain.SeasonType.Regular);
+        await playerReader.CreateLeagueData(2022, Domain.SeasonType.Regular);
     }
 }
