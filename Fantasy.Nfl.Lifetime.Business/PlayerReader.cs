@@ -40,7 +40,7 @@ public class PlayerReader
         };
         await _s3Client.PutObjectAsync(putObjectRequest);
 
-       // File.WriteAllText(@"D:\Users\Jeremy\Documents\code\fantasy\Fantasy.Nfl.Lifetime\NflLifetime\src\assets\2021.Regular.Data.json", jsonString);
+        // File.WriteAllText(@"D:\Users\Jeremy\Documents\code\fantasy\Fantasy.Nfl.Lifetime\NflLifetime\src\assets\2021.Regular.Data.json", jsonString);
     }
 
     private async Task<List<RosterEntry>> LoadRoster(int year)
@@ -76,15 +76,15 @@ public class PlayerReader
             }
 
             matchingOwner.Players.Add(player);
-            Console.WriteLine(rosterEntry.RosterText());
-            System.Threading.Thread.Sleep(250);
+            Console.WriteLine(rosterEntry.RosterText() + " - " + player.Score);
+            System.Threading.Thread.Sleep(5000);
         }
 
         foreach (var owner in leagueData.Owners)
         {
             owner.Score = owner.Players.Sum(p => p.Score);
             var sortedPlayers = owner.Players.OrderByDescending(p => p.Score);
-            owner.CountingScore =  sortedPlayers.Where(p => p.Position == PositionType.QB).Take(1).Sum(p => p.Score) + 
+            owner.CountingScore = sortedPlayers.Where(p => p.Position == PositionType.QB).Take(1).Sum(p => p.Score) +
                                    sortedPlayers.Where(p => p.Position == PositionType.RB).Take(2).Sum(p => p.Score) +
                                    sortedPlayers.Where(p => p.Position == PositionType.WR).Take(3).Sum(p => p.Score) +
                                    sortedPlayers.Where(p => p.Position == PositionType.TE).Take(1).Sum(p => p.Score);
@@ -124,16 +124,18 @@ public class PlayerReader
     {
         if (string.IsNullOrEmpty(entry.Link)) { return; }
 
-        var divValue = seasonType == SeasonType.Regular ? "div_passing" : "div_passing_playoffs";
+        var divValue = seasonType == SeasonType.Regular ? "div_passing" : "div_passing_post";
+        var idValue = seasonType == SeasonType.Regular ? "passing" : "passing_post";
+
         //var url = $@"https://widgets.sports-reference.com/wg.fcgi?site=pfr&url=%2Fplayers%2F{entry.RosterLetter()}%2F{entry.Link}.htm&div={divValue}&cx={DateTime.UtcNow.ToString("o")}";
         var url = $@"https://www.pro-football-reference.com/players/{entry.RosterLetter()}/{entry.Link}.htm";
-       // var document = await GetHtmlDocument(url);
+        // var document = await GetHtmlDocument(url);
 
         var document = await GetStringDocument(url, divValue);
 
         if (document == null) { return; }
 
-        var yearRow = document.DocumentNode.SelectSingleNode($"//table/tbody/tr[th/@csk='{year}']");
+        var yearRow = document.DocumentNode.SelectSingleNode($"//table/tbody/tr[@id='{idValue}.{year}']");
 
         if (yearRow == null) { return; }
 
@@ -147,10 +149,12 @@ public class PlayerReader
     {
         if (string.IsNullOrEmpty(entry.Link)) { return; }
 
-        var divValue = seasonType == SeasonType.Regular ? "div_rushing_and_receiving" : "div_rushing_and_receiving_playoffs";
+        var divValue = seasonType == SeasonType.Regular ? "div_rushing_and_receiving" : "div_rushing_and_receiving_post";
+        var idValue = seasonType == SeasonType.Regular ? "rushing_and_receiving" : "rushing_and_receiving_post";
         if (player.Position == PositionType.WR || player.Position == PositionType.TE)
         {
-            divValue = seasonType == SeasonType.Regular ? "div_receiving_and_rushing" : "div_receiving_and_rushing_playoffs";
+            divValue = seasonType == SeasonType.Regular ? "div_receiving_and_rushing" : "div_receiving_and_rushing_post";
+            idValue = seasonType == SeasonType.Regular ? "receiving_and_rushing" :"receiving_and_rushing_post";
         }
 
         // var url = $"https://widgets.sports-reference.com/wg.fcgi?site=pfr&url=%2Fplayers%2F{entry.RosterLetter()}%2F{entry.Link}.htm&div={divValue}&cx={DateTime.UtcNow.ToString("o")}";
@@ -160,7 +164,7 @@ public class PlayerReader
 
         if (document == null) { return; }
 
-        var yearRow = document.DocumentNode.SelectSingleNode($"//table/tbody/tr[th/@csk='{year}']");
+        var yearRow = document.DocumentNode.SelectSingleNode($"//table/tbody/tr[@id='{idValue}.{year}']");
 
         if (yearRow == null) { return; }
 
@@ -178,7 +182,7 @@ public class PlayerReader
     {
         var statText = node.SelectSingleNode($"td[@data-stat='{stat}']")?.InnerHtml ?? "";
 
-        if (string.IsNullOrEmpty(statText)) {return 0;}
+        if (string.IsNullOrEmpty(statText)) { return 0; }
 
         statText = statText.Replace("<strong>", "")
                            .Replace("</strong>", "")
@@ -213,31 +217,101 @@ public class PlayerReader
         {
             var content = await _client.GetStringAsync(url);
 
-                    var divNameIdx = content.IndexOf(divName);
+            var divNameIdx = content.IndexOf(divName);
 
-        if (divNameIdx < 0) {
+            if (divNameIdx < 0)
+            {
+                return null;
+            }
+
+            var startTableIndex = content.IndexOf("<table", divNameIdx);
+            var endTableIndex = content.IndexOf("</table>", startTableIndex) + 8;
+
+            if (startTableIndex > 0)
+            {
+                var html = $"<html><body>{content.Substring(startTableIndex, endTableIndex - startTableIndex)}</body></html>";
+                HtmlDocument doc = new HtmlDocument();
+                doc.LoadHtml(html);
+
+                return doc;
+            }
             return null;
-        }
-
-        var startTableIndex = content.IndexOf("<table", divNameIdx);
-        var endTableIndex = content.IndexOf("</table>", startTableIndex) + 8;
-
-        if (startTableIndex > 0)
-        {
-            var html = $"<html><body>{content.Substring(startTableIndex, endTableIndex - startTableIndex)}</body></html>";
-            HtmlDocument doc = new HtmlDocument();
-            doc.LoadHtml(html);
-
-            return doc;
-        }
-        return null;
         }
         catch (System.Exception)
         {
             Console.WriteLine($"Error: {url}");
             return null;
-        } 
-
-
+        }
     }
 }
+
+public class Program2
+    {
+        static int[] queens;
+
+        public static void Start()
+        {
+            // Initialize queens array
+            queens = new int[8];
+
+            // Place the first queen on the first row
+            PlaceQueen(0);
+
+            // Print the final positions of the queens
+             Console.WriteLine("8 queens solution:");
+            for (int i = 0; i < 8; i++)
+            {
+                 Console.WriteLine("Queen " + (i + 1) + ": (" + (i + 1) + ", " + (queens[i] + 1) + ")");
+            }
+        }
+
+        static bool PlaceQueen(int row)
+        {
+            // Try placing the queen on each column of the current row
+            for (int col = 0; col < 8; col++)
+            {
+                // Check if the position is safe
+                if (IsSafe(row, col))
+                {
+                    // Place the queen on the current position
+                    queens[row] = col;
+
+                    // Move to the next row
+                    if (row == 7)
+                    {
+                        // We've reached the last row, so the solution is complete
+                        return true;
+                    }
+                    else
+                    {
+                        // Place the queen on the next row
+                        if (PlaceQueen(row + 1))
+                        {
+                            // The queen was successfully placed on the next row, so return true
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            // We couldn't find a safe position for the queen on the current row, so return false
+            return false;
+        }
+
+        static bool IsSafe(int row, int col)
+        {
+            // Check if the queen is attacked by any of the previously placed queens
+            for (int i = 0; i < row; i++)
+            {
+                // Check if the queen is on the same column or diagonal
+                if (queens[i] == col || Math.Abs(queens[i] - col) == row - i)
+                {
+                    // The queen is attacked, so return false
+                    return false;
+                }
+            }
+
+            // The queen is not attacked, so return true
+            return true;
+        }
+    }
